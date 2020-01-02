@@ -2,24 +2,17 @@ package com.fares.learning.spring.redis.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Id;
-
 import org.springframework.data.redis.core.RedisHash;
 
 @RedisHash("Student")
 public class Student implements Serializable {
 
-	public enum Gender {
-		MALE, FEMALE
-	}
-
-	@Id
 	private String id;
 	private String name;
-	private Gender gender;
+	private String gender;
 	private int grade;
 
-	public Student(String id, String name, Gender gender, int grade) {
+	public Student(String id, String name, String gender, int grade) {
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
@@ -42,11 +35,11 @@ public class Student implements Serializable {
 		this.name = name;
 	}
 
-	public Gender getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Gender gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
