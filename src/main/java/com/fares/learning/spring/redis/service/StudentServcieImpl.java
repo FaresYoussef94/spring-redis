@@ -23,28 +23,24 @@ public class StudentServcieImpl implements StudentServcie {
 	@Override
 	public Student createStudent(Student student) {
 		LOG.info("Saving student: {}", student);
-//		return studentRepository.save(student);
 		return null;
 	}
 
 	@Override
 	public Student getStudent(String id) {
 		LOG.info("Getting student by id: {}", id);
-//		return studentRepository.findById(id).get();
 		return null;
 	}
 
 	@Override
 	public Student updateStudent(Student student) {
 		LOG.info("Updating student: {}", student);
-//		return studentRepository.save(student);
 		return null;
 	}
 
 	@Override
 	public void deleteStudent(String id) {
 		LOG.info("Deleting student by id: {}", id);
-//		studentRepository.deleteById(id);
 	}
 
 	@Override
@@ -53,7 +49,6 @@ public class StudentServcieImpl implements StudentServcie {
 		List<Student> studentsList = new ArrayList<>();
 
 		redisTemplate.opsForValue().get("name");
-//		studentRepository.findAll().forEach(studentsList::add);
 		return studentsList;
 	}
 
