@@ -8,6 +8,8 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 
+import com.fares.learning.spring.redis.model.Student;
+
 @Configuration
 @EnableAutoConfiguration
 @EnableRedisRepositories
@@ -20,10 +22,20 @@ public class BeanConfigurations {
 	}
 
 	@Bean
-	public RedisTemplate<String, Object> redisTemplate() {
-		RedisTemplate<String, Object> template = new RedisTemplate<>();
+	public RedisTemplate<String, Student> redisTemplate() {
+		RedisTemplate<String, Student> template = new RedisTemplate<>();
 		template.setConnectionFactory(jedisConnectionFactory());
 		return template;
 	}
+	
+//	@Bean
+//	 RedisTemplate< String, Long > redisTemplate() {
+//	  final RedisTemplate< String, Long > template =  new RedisTemplate< String, Long >();
+//	  template.setConnectionFactory( jedisConnectionFactory() );
+//	  template.setKeySerializer( new StringRedisSerializer() );
+//	  template.setHashValueSerializer( new GenericToStringSerializer< Long >( Long.class ) );
+//	  template.setValueSerializer( new GenericToStringSerializer< Long >( Long.class ) );
+//	  return template;
+//	 }
 
 }
